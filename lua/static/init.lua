@@ -14,7 +14,7 @@ local determine_runner = function()
   end
 end
 
-local foo = function(command)
+local execute = function(command)
   local runner = determine_runner()
 
   if not runner then
@@ -28,11 +28,11 @@ local foo = function(command)
 end
 
 local build = function()
-  foo('build_command')
+  execute('build_command')
 end
 
 local serve = function()
-  foo('serve_command')
+  execute('serve_command')
   vim.cmd('startinsert')
 end
 
