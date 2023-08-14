@@ -19,12 +19,17 @@ local execute = function(command)
 
   if not runner then
     vim.notify('Could not determine the correct runner!', vim.log.levels.WARN)
+    return
+  end
 
+  local cmd = runner[command]
+  if cmd == nil then
+    vim.notify('Command is not supported. Please try a different command.', vim.log.levels.WARN)
     return
   end
 
   vim.cmd('botright new')
-  vim.cmd('terminal ' .. runner[command])
+  vim.cmd('terminal ' .. cmd)
 end
 
 local build = function()
@@ -36,9 +41,14 @@ local serve = function()
   vim.cmd('startinsert')
 end
 
+local prod = function()
+  execute('prod_command')
+end
+
 function M.setup(_)
   vim.api.nvim_create_user_command('StaticBuild', build, {})
   vim.api.nvim_create_user_command('StaticServe', serve, {})
+  vim.api.nvim_create_user_command('StaticProd', prod, {})
 end
 
 return M
