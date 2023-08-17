@@ -1,30 +1,35 @@
-return {
-  {
+local M = {}
+
+M.runners = {
+  jigsaw = {
     file = 'jigsaw',
     path = vim.fn.getcwd() .. '/vendor/bin',
-    build_command = 'vendor/bin/jigsaw build',
-    serve_command = 'vendor/bin/jigsaw serve',
-    prod_command = 'vendor/bin/jigsaw build production',
   },
-  {
+  hugo = {
     file = 'hugo.toml',
     path = vim.fn.getcwd(),
-    build_command = 'hugo',
-    serve_command = 'hugo server',
-    prod_command = 'hugo --gc --minify',
   },
-  {
+  eleventy = {
     file = 'eleventy.config.js',
     path = vim.fn.getcwd(),
-    build_command = 'npx @11ty/eleventy',
-    serve_command = 'npx @11ty/eleventy --serve',
-    prod_command = nil,
   },
-  {
+  nextjs = {
     file = 'next.config.js',
     path = vim.fn.getcwd(),
-    build_command = 'node_modules/.bin/next build',
-    serve_command = 'node_modules/.bin/next dev',
-    prod_command = nil,
   },
 }
+
+M.find = function()
+  for name, runner in pairs(M.runners) do
+    local r = vim.fs.find(runner.file, {
+      path = runner.path,
+    }, { type = 'file' })
+
+    if next(r) then
+      local runnerModule = require(string.format('static.runners.%s', name))
+      return name, runnerModule
+    end
+  end
+end
+
+return M

@@ -1,54 +1,45 @@
 local M = {}
 
-local runners = require('static.runners')
+local actions = { 'build', 'serve', 'prod' }
 
-local determine_runner = function()
-  for _, runner in pairs(runners) do
-    local r = vim.fs.find(runner.file, {
-      path = runner.path,
-    }, { type = 'file' })
+local execute = function(args)
+  -- action == build, serve, prod
+  local arguments = args.fargs
+  local action = arguments[1]
+  table.remove(arguments, 1)
 
-    if next(r) then
-      return runner
-    end
-  end
-end
-
-local execute = function(command)
-  local runner = determine_runner()
+  local _, runner = require('static.runners').find()
 
   if not runner then
     vim.notify('Could not determine the correct runner!', vim.log.levels.WARN)
     return
   end
 
-  local cmd = runner[command]
-  if cmd == nil then
+  local command = runner[action]
+
+  if command == nil then
     vim.notify('Command is not supported. Please try a different command.', vim.log.levels.WARN)
     return
   end
 
+  local cmd = command .. ' ' .. table.concat(arguments, ' ')
+
+  -- Move to strategy pattern
   vim.cmd('botright new')
   vim.cmd('terminal ' .. cmd)
-end
-
-local build = function()
-  execute('build_command')
-end
-
-local serve = function()
-  execute('serve_command')
   vim.cmd('startinsert')
 end
 
-local prod = function()
-  execute('prod_command')
-end
+function M.setup(opts)
+  local Config = require('static.config')
+  Config.setup(opts)
 
-function M.setup(_)
-  vim.api.nvim_create_user_command('StaticBuild', build, {})
-  vim.api.nvim_create_user_command('StaticServe', serve, {})
-  vim.api.nvim_create_user_command('StaticProd', prod, {})
+  vim.api.nvim_create_user_command('Static', execute, {
+    nargs = '*',
+    complete = function()
+      return actions
+    end,
+  })
 end
 
 return M
