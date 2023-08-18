@@ -12,7 +12,7 @@ local execute = function(args)
   local _, runner = require('static.runners').find()
 
   if not runner then
-    vim.notify('Could not determine the correct runner!', vim.log.levels.WARN)
+    vim.notify('Could not determine the correct runner.', vim.log.levels.WARN)
     return
   end
 
@@ -25,10 +25,8 @@ local execute = function(args)
 
   local cmd = command .. ' ' .. table.concat(arguments, ' ')
 
-  -- Move to strategy pattern
-  vim.cmd('botright new')
-  vim.cmd('terminal ' .. cmd)
-  vim.cmd('startinsert')
+  local strategies = require('static.strategies')
+  strategies.execute(cmd)
 end
 
 function M.setup(opts)
