@@ -6,6 +6,7 @@ local execute = function(args)
   -- action == build, serve, prod
   local arguments = args.fargs
   local action = arguments[1]
+  -- remove the first argument which is the action
   table.remove(arguments, 1)
 
   local _, runner = require('static.runners').find()
