@@ -30,8 +30,8 @@ local execute = function(args)
 end
 
 function M.setup(opts)
-  local Config = require('static.config')
-  Config.setup(opts)
+  local config = require('static.config')
+  config.setup(opts)
 
   vim.api.nvim_create_user_command('Static', execute, {
     nargs = '*',
