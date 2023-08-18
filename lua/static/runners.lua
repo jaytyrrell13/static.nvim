@@ -17,6 +17,10 @@ M.runners = {
     file = 'next.config.js',
     path = vim.fn.getcwd(),
   },
+  gatsby = {
+    file = 'gatsby-config.js',
+    path = vim.fn.getcwd(),
+  },
 }
 
 M.find = function()
