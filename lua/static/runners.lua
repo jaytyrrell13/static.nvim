@@ -36,6 +36,13 @@ M.runners = {
     serve = 'npx gatsby develop',
     prod = nil,
   },
+  nuxtjs = {
+    file = 'nuxt.config.ts',
+    path = vim.fn.getcwd(),
+    build = 'npx nuxi build',
+    serve = 'npx nuxi dev',
+    prod = nil,
+  },
 }
 
 M.find = function()
