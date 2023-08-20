@@ -54,8 +54,9 @@ This plugin can execute the SSG commands using different methods called "strateg
 
 | Strategy | Identifier | Description |
 | :---: | :---: | :--- |
-| Basic (default) | basic | Runs commands using `!` |
-| Neovim | neovim | Runs commands using `:terminal` in a horizontal split |
+| Basic (default) | `basic` | Runs commands using `!` |
+| Neovim | `neovim` | Runs commands using `:terminal` in a horizontal split |
+| Dispatch | `dispatch` `dispatch_background` | Runs commands using `:Dispatch` or `:Dispatch!` |
 
 ## Contributing
 

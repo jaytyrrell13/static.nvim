@@ -10,6 +10,14 @@ function M.neovim(command)
   vim.cmd('startinsert')
 end
 
+function M.dispatch(command)
+  vim.cmd('Dispatch ' .. command)
+end
+
+function M.dispatch_background(command)
+  vim.cmd('Dispatch! ' .. command)
+end
+
 function M.execute(command)
   local config = require('static.config')
   local strategy = config.options.strategy or 'basic'
