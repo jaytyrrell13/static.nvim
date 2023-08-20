@@ -1,7 +1,7 @@
 local M = {}
 
 M.defaults = {
-  strategy = 'neovim',
+  strategy = 'basic',
 }
 
 -- Default options merged with user options
