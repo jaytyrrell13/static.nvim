@@ -48,6 +48,24 @@ Supported Static Site Generators:
 - [Jigsaw](https://jigsaw.tighten.com/)
 - [Hugo](https://gohugo.io/)
 
+### Commands
+
+| Command | Description |
+| :-----: | :---------: |
+| `build` | Build the site for local development |
+| `serve` | Start a webserver to view the site |
+| `prod`  | Build the site for production |
+
+**Note:** Some Static Site Generators do not support the `prod` command, use the `build` command instead.
+
+### Parameters
+
+Any parameters passed to one of the commands is passed along to the underlying command. For example, if you'd like to use a different port for the `serve` command, you can run:
+
+```sh
+:Static serve --port=8081
+```
+
 ## Strategies
 
 This plugin can execute the SSG commands using different methods called "strategies".
