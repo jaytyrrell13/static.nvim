@@ -47,6 +47,8 @@ Supported Static Site Generators:
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Jigsaw](https://jigsaw.tighten.com/)
 - [Hugo](https://gohugo.io/)
+- [Hexo](https://hexo.io/)
+- [Astro](https://astro.build/)
 
 ### Commands
 
