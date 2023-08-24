@@ -50,6 +50,13 @@ M.runners = {
     serve = 'npx hexo server',
     prod = nil,
   },
+  astro = {
+    file = 'astro.config.mjs',
+    path = vim.fn.getcwd(),
+    build = 'npx astro build',
+    serve = 'npx astro dev',
+    prod = nil,
+  },
 }
 
 M.find = function()
