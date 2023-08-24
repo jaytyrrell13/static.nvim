@@ -43,6 +43,13 @@ M.runners = {
     serve = 'npx nuxi dev',
     prod = nil,
   },
+  hexo = {
+    file = 'hexo',
+    path = vim.fn.getcwd() .. '/node_modules/.bin',
+    build = 'npx hexo generate',
+    serve = 'npx hexo server',
+    prod = nil,
+  },
 }
 
 M.find = function()
