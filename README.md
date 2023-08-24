@@ -42,13 +42,13 @@ nmap <leader>Sp :Static prod<cr>
 Supported Static Site Generators:
 
 - [11ty](https://www.11ty.dev/)
+- [Astro](https://astro.build/)
+- [Gatsby](https://www.gatsbyjs.com/)
+- [Hexo](https://hexo.io/)
+- [Hugo](https://gohugo.io/)
+- [Jigsaw](https://jigsaw.tighten.com/)
 - [Next.js](https://nextjs.org/)
 - [Nuxt](https://nuxt.com/)
-- [Gatsby](https://www.gatsbyjs.com/)
-- [Jigsaw](https://jigsaw.tighten.com/)
-- [Hugo](https://gohugo.io/)
-- [Hexo](https://hexo.io/)
-- [Astro](https://astro.build/)
 
 ### Commands
 
