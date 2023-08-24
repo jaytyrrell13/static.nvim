@@ -78,10 +78,12 @@ This plugin can execute the SSG commands using different methods called "strateg
 | Neovim | `neovim` | Runs commands using `:terminal` in a horizontal split |
 | Dispatch | `dispatch` `dispatch_background` | Runs commands using `:Dispatch` or `:Dispatch!` |
 
-## Contributing
+## Configuration
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+**static.nvim** comes with the following defaults:
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+```lua
+{
+  strategy = 'basic',
+}
+```
