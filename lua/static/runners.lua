@@ -16,7 +16,7 @@ M.runners = {
     prod = 'hugo --gc --minify',
   },
   eleventy = {
-    file = 'eleventy.config.js',
+    file = { '.eleventy.js', 'eleventy.config.js', 'eleventy.config.cjs' },
     path = vim.fn.getcwd(),
     build = 'npm run build',
     serve = 'npm run start',
