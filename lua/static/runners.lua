@@ -18,8 +18,8 @@ M.runners = {
   eleventy = {
     file = 'eleventy.config.js',
     path = vim.fn.getcwd(),
-    build = 'npx @11ty/eleventy',
-    serve = 'npx @11ty/eleventy --serve',
+    build = 'npm run build',
+    serve = 'npm run start',
     prod = nil,
   },
   nextjs = {
