@@ -25,22 +25,22 @@ M.runners = {
   nextjs = {
     file = 'next.config.js',
     path = vim.fn.getcwd(),
-    build = 'node_modules/.bin/next build',
-    serve = 'node_modules/.bin/next dev',
+    build = 'npm run build',
+    serve = 'npm run dev',
     prod = nil,
   },
   gatsby = {
     file = 'gatsby-config.js',
     path = vim.fn.getcwd(),
-    build = 'npx gatsby build',
-    serve = 'npx gatsby develop',
+    build = 'npm run build',
+    serve = 'npm run start',
     prod = nil,
   },
   nuxtjs = {
     file = 'nuxt.config.ts',
     path = vim.fn.getcwd(),
-    build = 'npx nuxi build',
-    serve = 'npx nuxi dev',
+    build = 'npm run build',
+    serve = 'npm run dev',
     prod = nil,
   },
   hexo = {
@@ -53,8 +53,8 @@ M.runners = {
   astro = {
     file = 'astro.config.mjs',
     path = vim.fn.getcwd(),
-    build = 'npx astro build',
-    serve = 'npx astro dev',
+    build = 'npm run build',
+    serve = 'npm run start',
     prod = nil,
   },
 }
