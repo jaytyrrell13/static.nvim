@@ -59,7 +59,11 @@ M.runners = {
   },
 }
 
-M.find = function()
+M.find = function(runnerName)
+  if runnerName then
+    return runnerName, M.runners[runnerName]
+  end
+
   for name, runner in pairs(M.runners) do
     local r = vim.fs.find(runner.file, {
       path = runner.path,
