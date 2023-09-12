@@ -39,6 +39,10 @@ nmap <leader>Sp :Static prod<cr>
 
 ## Usage
 
+Running `:Static build<cr>` for example, will determine the Static Site Generator and then run the build command that is configured in [runners.lua](https://github.com/jaytyrrell13/static.nvim/blob/main/lua/static/runners.lua).
+
+If you'd like to run a specific Static Site Generator, you can specify it in the command like `:Static astro build<cr>`.
+
 Supported Static Site Generators:
 
 - [11ty](https://www.11ty.dev/)
