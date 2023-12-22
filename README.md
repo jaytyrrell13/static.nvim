@@ -92,6 +92,26 @@ This plugin can execute the SSG commands using different methods called "strateg
 }
 ```
 
+## Snippets
+
+This plugin also includes snippets for Astro. To use them, add this plugin as a dependency of LuaSnip.
+
+```lua
+{
+    'L3MON4D3/LuaSnip',
+    dependencies = {
+        'jaytyrrell13/static.nvim',
+    }
+}
+```
+
+Also, make sure to have this line in your config for LuaSnip.
+
+```lua
+require('luasnip.loaders.from_vscode').lazy_load()
+```
+
+
 ## Support
 
 If you'd like to support the development of `static.nvim`, you can [buy me a coffee](https://www.buymeacoffee.com/jaytyrrell).
