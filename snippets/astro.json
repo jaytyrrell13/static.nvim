@@ -1,0 +1,76 @@
+{
+  "Component": {
+    "prefix": "comp",
+    "body": [
+      "---",
+      "$1",
+      "---",
+      "$0"
+    ],
+    "description": "Astro component"
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": ["import $1 from '$0'"],
+    "description": "Import statement"
+  },
+  "Slot": {
+    "prefix": "slot",
+    "body": ["<slot />"],
+    "description": "Slot"
+  },
+  "Named Slot": {
+    "prefix": "nslot",
+    "body": ["<slot name=\"$1\" />$0"],
+    "description": "Slot"
+  },
+  "Slot with Fallback": {
+    "prefix": "fslot",
+    "body": [
+      "<slot>",
+      "\t$0",
+      "</slot>"
+    ],
+    "description": "Slot with Fallback"
+  },
+  "Astro Glob": {
+    "prefix": "glob",
+    "body": ["await Astro.glob('$1')$0"],
+    "description": "Astro glob"
+  },
+  "Astro Props": {
+    "prefix": "props",
+    "body": ["const { $1 } = Astro.props$0"],
+    "description": "Astro props"
+  },
+  "Astro Params": {
+    "prefix": "aparams",
+    "body": ["const { $1 } = Astro.params$0"],
+    "description": "Astro params"
+  },
+  "Astro Request": {
+    "prefix": "areq",
+    "body": ["Astro.request."],
+    "description": "Astro request"
+  },
+  "Astro Response": {
+    "prefix": "aresp",
+    "body": ["Astro.response."],
+    "description": "Astro response"
+  },
+  "Astro Redirect": {
+    "prefix": "ared",
+    "body": ["Astro.redirect('$1')$0"],
+    "description": "Astro redirect"
+  },
+  "Astro Client Address": {
+    "prefix": "aca",
+    "body": ["Astro.clientAddress"],
+    "description": "Astro client address"
+  },
+  "Astro Generator": {
+    "prefix": "agen",
+    "body": ["Astro.generator"],
+    "description": "Astro generator"
+  }
+}
