@@ -91,3 +91,7 @@ This plugin can execute the SSG commands using different methods called "strateg
   strategy = 'basic',
 }
 ```
+
+## Support
+
+If you'd like to support the development of `static.nvim`, you can [buy me a coffee](https://www.buymeacoffee.com/jaytyrrell).
