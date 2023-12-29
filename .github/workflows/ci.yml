@@ -10,7 +10,6 @@ permissions:
 jobs:
   docs:
     runs-on: ubuntu-latest
-    needs: tests
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v3
